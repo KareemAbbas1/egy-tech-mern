@@ -7,6 +7,10 @@ import dotenv from 'dotenv';
 // Set up dotenv to be able to access the local enviornment variables 
 dotenv.config();
 
+
+// Import Routes
+import products from "./routes/api/products.js";
+
 /* End Imports */
 
 
@@ -29,6 +33,10 @@ mongoose
 .then(() => console.log('Database is connected'))
 .catch(error => console.log(error));
 
+
+
+// Use Routes
+app.use('/api/products', products);
 
 
 // Start the server
